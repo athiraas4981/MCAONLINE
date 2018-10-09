@@ -40,9 +40,9 @@
     <aside>
     <h3>Categories</h3>
       <ul class="categories">
-        <li><span><a href="#">Programs</a></span></li>
         <li><span><a href="#">Student Info</a></span></li>
         <li><span><a href="#">Descriptions</a></span></li>
+        <li><span><a href="#">Notes Upload</a></span></li>
 		</ul>
     <form action="#" id="newsletter-form">
         <fieldset>
