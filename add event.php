@@ -1,3 +1,6 @@
+<?php
+include('config4.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +23,12 @@
       <h1><a href="#">Student's site</a></h1>
       <nav>
         <ul>
-          <li class="current"><a href="index stud1.php" class="m1">Home</a></li>
-          <li><a href="aboutus.php" class="m2">About Us</a></li>
-         <!--<li><a href="add event.php" class="m2">Event Registration</a></li>
-          <li><a href="Noteshare.php" class="m2">Notes Sharing</a></li>-->
-          </ul>
+          <li class="current"><a href="index stud1.php" class="m1">Home Page</a></li>
+           <li><a href="aboutus.php" class="m2">About Us</a></li>
+          <!--<li><a href="articles.html" class="m3">Our Articles</a></li>
+          <li><a href="contact-us.html" class="m4">Contact Us</a></li>
+          <li class="last"><a href="sitemap.html" class="m5">Sitemap</a></li>-->
+        </ul>
       </nav>
       <form action="#" id="search-form">
         <fieldset>
@@ -37,15 +41,18 @@
   </header>
   <div class="container">
     <aside>
-    <h3>Categories</h3>
+     <h3>Categories</h3>
       <ul class="categories">
         <li><span><a href="#">Profile</a></span></li>
-        <li><span><a href="add event.php">Add Event</a></span></li>
         <li><span><a href="#">View Result</a></span></li>
         <li><span><a href="#">Notes Sharing</a></span></li>
         <li><span><a href="#">Upload Notes</a></span></li>
-		</ul>
-    <form action="#" id="newsletter-form">
+        <!--<li><span><a href="#">Administrators</a></span></li>
+        <li><span><a href="#">Basic Information</a></span></li>
+        <li><span><a href="#">Vacancies</a></span></li>
+        <li class="last"><span><a href="#">Calendar</a></span></li>-->
+      </ul>
+      <form action="#" id="newsletter-form">
         <fieldset>
           <div class="rowElem">
             <h2>Newsletter</h2>
@@ -68,11 +75,76 @@
       </ul>
     </aside>
     <section id="content">
-      <div id="banner">
-        <h2>Professional <span>Online Education <span>Since 1992</span></span></h2>
-      </div>
-   <div class="inside">
-   <h2>Move Forward <span>With Your Education</span></h2>
+      <div id="">
+       <form action="" enctype="multipart/form-data" method="post">
+	<h4><U>EVENTS</U></h4>
+	<table>
+	<tr>
+		<td>Event Name:</td>
+		<td><input type="text" class="form-control"  name="ename"></td>
+	</tr>
+	<tr>
+		<td>Description:</td>
+		<td><textarea name="description" class="form-control"  rows="5"></textarea></td>
+	</tr>
+	<tr>
+		<td>Poster:</td>
+		<td><input type="file" name="file" value="Browse"></td>
+	</tr>
+	<tr>
+		<td>Venue:</td>
+		<td><input type="text" class="form-control"  name="venue"></td>
+	</tr>
+	<tr>
+		<td>Event Date:</td>
+		<td>From:<input type="text" class="form-control"  name="from"></td><td>To:<input type="text" class="form-control" name="to"></td>
+	</tr>
+	<tr>
+	    <td>Price:</td>
+		<td><input type="text" class="form-control"  name="price"></td>
+	</tr>
+	<tr>
+	<td colspan="2" align="center" ><input type="submit" name="submit" value="submit" style="background-color: darkgrey;color: white;width:100px;height:40px;"></td>
+	</tr>	
+</table>
+</form>
+ <?php
+if(isset($_POST['submit']))
+{
+	
+	$v1=$_POST['ename'];
+	$v2=$_POST['description'];
+	$v3=mysql_real_escape_string(file_get_contents($_FILES["file"] ["tmp_name"]));
+	$v4=$_POST['venue'];
+	$v5=$_POST['from'];
+	$v6=$_POST['to'];
+	$v7=$_POST['price'];
+	$sql="insert into events(Event_name,Event_descrip,image,Venue,vFrom,vTo,Price)Values('$v1','$v2','$v3','$v4','$v5','$v6','$v7')";
+	/*echo $sql;*/
+	mysql_query($sql) OR die(mysql_error());
+	
+	 	echo"<script> alert('inserted successfully'); </script>";
+
+}
+        
+?>
+  <div class="inside">
+        <!-- <h2>Recent <span>Articles</span></h2>
+        <ul class="list">
+          <li><span><img src="images/icon1.png"></span>
+            <h4>About Template</h4>
+            <p>Eusus consequam vitae habitur amet nullam vitae condis phasellus sed justo. Orcivel mollis intesque eu sempor ridictum a non laorem lacingilla wisi.</p>
+          </li>
+          <li><span><img src="images/icon2.png"></span>
+            <h4>Branch Office</h4>
+            <p>Eusus consequam vitae habitur amet nullam vitae condis phasellus sed justo. Orcivel mollis intesque eu sempor ridictum a non laorem lacingilla wisi.</p>
+          </li>
+          <li class="last"><span><img src="images/icon3.png"></span>
+            <h4>Student’s Time</h4>
+            <p>Eusus consequam vitae habitur amet nullam vitae condis phasellus sed justo. Orcivel mollis intesque eu sempor ridictum a non laorem lacingilla wisi.</p>
+          </li>
+        </ul>-->
+        <h2>Move Forward <span>With Your Education</span></h2>
         <p><span class="txt1">Eusus consequam</span> vitae habitur amet nullam vitae condis phasellus sed justo. Orcivel mollis intesque eu sempor ridictum a non laorem lacingilla wisi. </p>
         <div class="img-box"><img src="images/1page-img.jpg">Eusus consequam vitae habitur amet nullam vitae condis phasellus sed justo. Orcivel mollis intesque eu sempor ridictum a non laorem lacingilla wisi. Nuncrhoncus eros <a href="#">maurien ulla</a> facilis tor mauris tincidunt et vitae morbi. Velelit condimentes in laorem quis nullamcorper nam fauctor feugiat pellent sociis.</div>
         <p class="p0">Eusus consequam vitae habitur amet nullam vitae condis phasellus sed justo. Orcivel mollis intesque eu sempor ridictum a <a href="#">non laorem</a> lacingilla wisi.</p>
