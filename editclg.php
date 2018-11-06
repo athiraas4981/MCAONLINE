@@ -7,8 +7,9 @@ include('config4.php');
 <meta charset="utf-8">
 <title>Untitled Document</title>
 </head>
-<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
 <body>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<table border="4" align="center">
 	<tr>
 		<td>CollegeName</td>
@@ -16,14 +17,15 @@ include('config4.php');
 		<td>Address</td>
 		<td>District</td>
 		<td>Pin</td>
+		<td>Action</td>
 		</tr>
 <?php
-		$sql="SELECT * FROM addclg";
+		$sql="SELECT * FROM addclg where status='2'";
 		$q=mysql_query($sql) OR die(mysql_error());
 		$rc=mysql_num_rows($q);
 		if($rc==0)
 		{
-			echo error;
+			//echo "error";//
 		}
 		else
 		{
@@ -35,6 +37,7 @@ include('config4.php');
 			<td><?php echo $r[3] ?></td>
 			<td><?php echo $r[4] ?></td>
 			<td><?php echo $r[5] ?></td>
+			<td><a href="edit1.php?id=<?php echo $r[0]; ?>">EDIT</a> <a href="cancel.php?id=<?php echo $r[0]; ?>">DELETE</a></td>
 		</tr>
 		<?php
 			}
