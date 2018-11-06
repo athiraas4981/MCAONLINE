@@ -6,6 +6,7 @@ $sql=mysql_query("select * from addclg where clgid='$id'");
 ?>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 <meta charset="utf-8">
 <title>Untitled Document</title>
 </head>
