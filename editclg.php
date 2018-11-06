@@ -9,6 +9,7 @@ include('config4.php');
 </head>
 
 <body>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<table border="4" align="center">
 	<tr>
 		<td>CollegeName</td>
@@ -24,7 +25,7 @@ include('config4.php');
 		$rc=mysql_num_rows($q);
 		if($rc==0)
 		{
-			echo "error";
+			//echo "error";//
 		}
 		else
 		{
