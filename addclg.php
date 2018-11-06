@@ -6,6 +6,7 @@ include('config4.php');
 <meta charset="utf-8">
 <title>Untitled Document</title>
 </head>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 
 <body>
 	<form action=""  method="post">
@@ -70,36 +71,4 @@ if(isset($_POST['submit']))
 }
 ?>
 
-	<?php /*?>$maxval= mysql_query("SELECT MAX(id) FROM addclg");
-	//$val=mysql_fetch_array($maxval);
-	$max= $val[0];
-	mysql_query("INSERT INTO addclg2(clgid,clgcode,clgname,address,district,pincode) Values('$max','$v2','$v1','$v3','$v4','$v5')");
-	$sql="SELECT * FROM addclg ";
-		$q=mysql_query($sql) OR die(mysql_error());
-		$rc=mysql_num_rows($q);
-		if($rc==0)
-		{
-			echo error;
-		}
-		else
-		{
-			while($r=mysql_fetch_array($q)){
-			?><?php */?>
 	
-		<?php /*?><tr>
-			<td><?php echo $r[1] ?></td><?php 
-				<td><?php echo $r[2]  ?></td>
-			<td><?php echo $r[3] ?></td>
-			<td><?php echo $r[4] ?></td>
-			<td><?php echo $r[5] ?></td>
-			<td><?php echo $r[6] ?></td>
-			<td><?php echo $r[7] ?></td>
-</tr>
-		<?php
-			}
-		}
-			}
-		?>
-
-        
-<?php */?>
