@@ -1,0 +1,13 @@
+<?php
+include('config5.php');
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<table border="4" align="center">
+	
