@@ -6,7 +6,7 @@ include('config4.php');
 <meta charset="utf-8">
 <title>Untitled Document</title>
 </head>
-
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 
 <body>
 	<form action=""  method="post">
