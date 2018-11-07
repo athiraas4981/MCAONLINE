@@ -16,8 +16,8 @@ include('config4.php');
 		
 			<tr>
 				<td>college Name</td>
-				<td><select name="district">
-				<?php
+				<td><select name="district"> 
+			<?php
 $sql="SELECT * FROM addclg";
 		$q=mysql_query($sql) OR die(mysql_error());
 		$rc=mysql_num_rows($q);
@@ -52,7 +52,7 @@ $sql="SELECT * FROM addclg";
 			</tr>
 			
 			<tr>
-				<td colspan="2" align="center"><input type="submit" name="submit"</td>
+				<td colspan="2" align="center"><input type="submit" name="submit" value="VIEW"</td>
 			</tr>
 		</table>
 	</form>
