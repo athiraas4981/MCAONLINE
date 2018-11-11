@@ -256,45 +256,42 @@ include('config.php');
                   </span>
                   Dashboard
                 </h3>
-    <?php
-$con=mysqli_connect("localhost","root","","mca");
-// Check connection
-if (mysqli_connect_errno())
-{
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-$result = mysqli_query($con,"SELECT * FROM event WHERE status='1'");
-echo "<table border='2'>
-<tr>
-<th>EVENTS</th>
-<th> CONTENT</th>
-<th>IMAGE/POSTER</th>
-<th>TIME</th>
-<th>DATE</th>
-<th>VENUE</th>
-<th>COLLEGE</th>
-<th>PASS</th>
-</tr>";
-
-while($row = mysqli_fetch_array($result))
-{
-echo "<tr>";
-echo "<td>" .$row[1] . "</td>";
-echo "<td>" .$row[2] . "</td>";
-echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $row[3] ).'" width="100px" height="100px"></td>';
-echo "<td>" .$row[4] . "</td>";
-echo "<td>" .$row[5] . "</td>";
-echo "<td>" .$row[6] . "</td>";
-echo "<td>" .$row[7] . "</td>";
-echo "<td>" .$row[8] . "</td>";
-//echo "<td>" . $row['image'] . "</td>";
-
-echo "</tr>";
-}
-echo "</table>";
-
-mysqli_close($con);
-?>
+   <table class="table">
+				<tr>
+					<td>Name</td>
+					<td>content</td>
+					<td>image</td>
+					<td>time</td>
+					<td>date</td>
+					<td>venue</td>
+					<td>college</td>
+                    <td>pass</td>
+                    
+				</tr>
+<?php
+	
+	$sql="SELECT * FROM event WHERE status='1'";
+	
+	$qry=mysql_query($sql) or die(mysql_error());
+	
+	$rw=mysql_num_rows($qry);
+	
+	if($rw>0){
+		
+		while($row=mysql_fetch_array($qry)){
+			?>
+			<tr>
+					<td><?php echo $row[1] ?></td>
+					<td><?php echo $row[2] ?></td>
+					<td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row[3]).'" width="50px" height="40px"/>'; ?></td>
+					<td><?php echo $row[4] ?></td>
+					<td><?php echo $row[5] ?></td>
+					<td><?php echo $row[6] ?></td>
+                    <td><?php echo $row[7] ?></td>
+                    <td><?php echo $row[8] ?></td>
+				<td><a href="removesst.php?id=<?php echo $row[0];?>"><button>Remove User</button></a></td>
+			</tr>
+			</table>
             </blockquote>
           </div>
             </div>
@@ -463,7 +460,10 @@ mysqli_close($con);
   <script src="js/dashboard.js"></script>
   <!-- End custom js for this page-->
 </body>
-
+<?php
+		}
+	}
+	?>
 
 <!-- Mirrored from www.bootstrapdash.com/demo/purple-admin-free/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Oct 2018 05:45:20 GMT -->
 </html>
