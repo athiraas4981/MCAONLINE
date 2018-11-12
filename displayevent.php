@@ -31,7 +31,7 @@ while($row = mysqli_fetch_array($result))
 echo "<tr>";
 echo "<td>" .$row[1] . "</td>";
 echo "<td>" .$row[2] . "</td>";
-echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $row[3] ).'"/></td>';
+echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $row[3] ).'" width="100px" height="100px"></td>';
 echo "<td>" .$row[4] . "</td>";
 echo "<td>" .$row[5] . "</td>";
 echo "<td>" .$row[6] . "</td>";
