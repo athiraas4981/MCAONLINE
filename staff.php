@@ -1,8 +1,17 @@
-<?php 
-session_start();
-include('config.php');
-$id=$_SESSION['uid'];
-$uname=$_SESSION['uname'];
+
+<?php
+    include("config.php");
+    session_start();
+if(isset($_POST['submit']))
+{
+$NAME=$_POST['NAME'];
+$email=$_POST['email'];
+$Mobnumber=$_POST['Mobnumber'];
+$COLLEGE=$_POST['COLLEGE'];
+$Position=$_POST['Position'];
+$v="insert into staff_det (name,email,phone,college,position) values('$NAME','$email','$Mobnumber','$COLLEGE','$Position')" ;
+$m=mysql_query($v) or die(mysql_error());
+}
 ?>
 <!doctype html>
 <html>
@@ -12,11 +21,13 @@ $uname=$_SESSION['uname'];
 </head>
 
 <body>
-<a href="staff.php" >home</a>
-<a href="staffnot.php" >notification</a>
-<a href="accepteduser.php" >Accepted user</a>
-<a href="declineduser.php" >Declined user</a>
-<a href="removeduser.php" >Removed user</a>
+<form action="" method="post">
+name<input type="text"  name="NAME">
+email<input type="text"  name="email">
+Mobnumber<input type="text"  name="Mobnumber">
+COLLEGE<input type="text"  name="COLLEGE">
+Position<input type="text"  name="Position">
+<input type="submit" name="submit">
 
 </body>
 </html>
