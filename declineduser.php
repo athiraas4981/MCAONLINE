@@ -229,16 +229,16 @@ $uname=$_SESSION['uname'];
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-title">STAFF</span>
+              <span class="menu-title">STUDENT</span>
               <i class="menu-arrow"></i>
               <i class="mdi mdi-crosshairs-gps menu-icon"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="staffnot.php">NOTTIFICATIONS</a></li>
-                <li class="nav-item"> <a class="nav-link" href="accepteduser.php">ACCEPTED USERS</a></li>
-                <li class="nav-item"> <a class="nav-link" href="declineduser.php">DECLINED USERS</a></li>
-                <li class="nav-item"> <a class="nav-link" href="removeduser.php">REMOVED USERS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="accepteduser.php">ACCEPTED STUDENTSS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="declineduser.php">DECLINED STUDENTS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="removeduser.php">REMOVED STUDENTS</a></li>
               </ul>
             </div>
           </li>
@@ -297,7 +297,7 @@ $uname=$_SESSION['uname'];
 					<td><?php echo $row[4] ?></td>
 					<td><?php echo $row[5] ?></td>
 					<td><?php echo $row[6] ?></td>
-				<td><a href="removesst.php?id=<?php echo $row[0];?>"><button>Remove User</button></a></td>
+				<td><a href="removest.php?id=<?php echo $row[0];?>"><button>REMOVE STUDENT</button></a></td>
 			</tr>
 			</table>
 			<?php
