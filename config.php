@@ -1,5 +1,8 @@
 <?php
-$con=mysql_connect("localhost","root","");
-$charset = mysql_client_encoding($con);
-mysql_select_db("MCA");
+$host="localhost";
+$uname="root";
+$pass="";
+$db="online";
+mysql_connect($host,$uname,$pass,$db);
+mysql_select_db($db);
 ?>
