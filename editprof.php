@@ -12,8 +12,7 @@ else{
 		
 			
 		?>
-
-<!DOCTYPE html>
+		<!DOCTYPE html>
 <html lang="en">
 	
 <!-- Mirrored from kodeforest.net/html/uoe/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Sep 2018 08:39:54 GMT -->
@@ -21,7 +20,7 @@ else{
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MCA online</title>
+	<title>Education</title>
 	<!-- Bootstrap core CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<!-- Full Calender CSS -->
@@ -56,10 +55,109 @@ else{
 </head>
 
 <body>
+	<!--KF KODE WRAPPER WRAP START-->
+    <div class="kode_wrapper">
+  
+		 <!-- register Modal -->
+    <div class="modal fade" id="reg-box" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-content">
+            	<!--SIGNIN AS USER START-->
+                <div class="user-box">
+                	<h2>Student Registration</h2>
+                   
+
+                        <div class="input-container">
+                            <button type="submit" class="btn-style" name="submit">Sign Up</button>
+                        </div>
+                    </div>
+						</form>
+                   
+                </div>
+                <!--SIGNIN AS USER END-->
+              
+                <div class="clearfix"></div>
+            </div>
+			<div class="clearfix"></div>
+		</div>
+		</div>
+		
+    <!-- register Modal end-->
+    
+    <!-- SIGNIN MODEL START -->
+    <div class="modal fade" id="signin-box" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-content">
+                <div class="user-box">
+                    <h2>Sign In</h2>
+                    <!--FORM FIELD START-->
+					
+                    <!--FORM FIELD END-->
+                    <!--OPTION START-->
+                    
+                    <!--OPTION END-->
+                
+                </div>
+                
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+		</form>
+		
+    <!-- SIGNIN MODEL END -->
+    
 	<div id="sidr">
 		<div class="logo_wrap">
 			<a href="#"><img src="extra-images/logo.png" alt=""></a>
 		</div>
+		<div class="clearfix clear"></div>
+		<!-- Your content -->
+		<div class="kf-sidebar">
+			<!--KF_SIDEBAR_SEARCH_WRAP START-->
+			<div class="widget widget-search">
+				<h2>Search Course</h2>
+				<form>
+					<input type="search" placeholder="Keyword...">
+				</form>
+			</div>
+			<!--KF_SIDEBAR_SEARCH_WRAP END-->
+
+			<!--KF_SIDEBAR_ARCHIVE_WRAP START-->
+			<div class="widget widget-archive ">
+				<h2>Archives</h2>
+				<ul class="sidebar_archive_des">
+					<li>
+						<a href="#"><i class="fa fa-angle-right"></i>January 2016</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-angle-right"></i>February 2016</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-angle-right"></i>March 2016</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-angle-right"></i>April 2016</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-angle-right"></i>May 2016</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-angle-right"></i>June 2016</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-angle-right"></i>August 2016</a>
+					</li>
+				</ul>
+			</div>
+			<!--KF_SIDEBAR_ARCHIVE_WRAP END-->
+
+			<p class="copy-right-sidr">Design and Developed by KodeForest @ All Rights Reserved by KodeForest</p>
+		</div>
+	</div>
     	<!--HEADER START-->
     	<header id="header_2">
     		<!--kode top bar start-->
@@ -67,17 +165,17 @@ else{
 	    		<div class="container">
 	    			<div class="row">
 	    				<div class="col-md-5">
-	    					<div class="pull-left">
-	    						<em class="contct_2"><i class="fa fa-phone"></i> Call Us  on 0800 123 46 4747</em>
-	    					</div>
+	    				
 	    				</div>
 	    				<div class="col-md-7">
-    						
-    						<ul class="top_nav">
-	    						<li><a href="blog-detail.html">News</a></li>
-	    						<li><a href="event-detail.html">Event</a></li>
-	    						<li><a href="../students-site/login.php">student</a></li>
-	    						<li><a href="contactus.html">contact us</a></li>
+
+    						<ul class="login_wrap">
+    							<li><a href="viewbooks.php" Books></li>
+    							<li><a href="viewnote.php"Notes></li>
+    						</ul>	    					
+	    					<ul class="top_nav">
+	    						
+	    						
 	    					</ul>
 	    				</div>
 	    			</div>
@@ -94,7 +192,7 @@ else{
     				<div class="row">
     					<div class="col-md-2">
     						<div class="logo_wrap">
-    							
+    							<a href="#"><img src="../extra-images/logo.png" alt=""></a>
     						</div>
     					</div>
     					<div class="col-md-10">
@@ -102,29 +200,97 @@ else{
     						<div class="nav_2" id="navigation">
     							<ul>
     								<li><a href="student-prof.php">home</a></li>
-									<li><a href="">Event</a>
+									<!--<li><a href="aboutus.php">About Us</a></li>-->
+		                            <li><a href="#">Event</a>
 		                            	<ul>
 		                                    <li><a href="addevent.php">Add events</a></li>
 		                                    <li><a href="viewevent.php">Event List</a></li>
 		                                    
 		                                </ul>
 		                            </li>
+		                            
 		                            <li><a href="#">Books</a>
-		                            	<ul>
+		                            	
+										<ul>
 		                                   <li><a href="addbooks.php">Add Books</a></li>
 		                                    <li><a href="viewbooks.php">Books List</a></li>
 		                                </ul>
+		                                	
 		                            </li>
-		                            <li><a href="#">Notes</a>
-		                            	<ul>
-		                                	<li><a href="addnote.php">Add Notes</a></li>
-											<li><a href="viewnote.php">Notes list</a></li>
+									 <li><a href="#">Notes</a>
+		                            	
+										<ul>
+		                                   <li><a href="addnote.php">Add Notes</a></li>
+		                                    <li><a href="viewnote.php"> List Notes</a></li>
 		                                </ul>
+		                                	
 		                            </li>
-		                            <li><a href="login.php">Logout</a></li>
-		                           
+		                            
+		                            <li><a href="../gallery-masonary.php">Gallery</a>
+		                            	
+		                            </li>
+									
+									
+		                                    <li><a href="../index.php">LOGOUT</a></li>
+		                               
+		                                
+									
+		                            <li><a id="simple-menu" href="#sidr"><i class="fa fa-bars"></i></a></li>
     							</ul>
-    							
+                                   
+    							<!--DL Menu Start-->
+					            <div id="kode-responsive-navigation" class="dl-menuwrapper">
+					                <button class="dl-trigger">Open Menu</button>
+					                <ul class="dl-menu">
+										<li><a href="student-prof.php">home</a></li>
+										<!--<li><a href="aboutus.php">about us</a></li>-->
+					                    <li class="menu-item kode-parent-menu"><a href="#">Event</a>
+					                        <ul class="dl-submenu">
+					                           <li><a href="../our-event.php">our Event</a></li>
+			                                    <li><a href="../event-list.php">Event List</a></li>
+			                                    <li><a href="../event-detail.php">Event Detail</a></li>
+					                        </ul>
+					                    </li>
+					                    <li class="menu-item kode-parent-menu"><a href="#">Blog</a>
+					                        <ul class="dl-submenu">
+					                            <li><a href="../our-blog.php">our Blog</a></li>
+			                                 
+					                        </ul>
+					                    </li>
+										<li class="menu-item kode-parent-menu"><a href="#">Course</a>
+					                        <ul class="dl-submenu">
+					                            <li><a href="../our-courses.php">Our Course</a></li>
+			                                    <li><a href="../courses-list.php">Course List</a></li>
+			                                	<li><a href="../courses-detail.php">Course Detail</a></li>
+					                        </ul>
+					                    </li>
+					                    <li class="menu-item kode-parent-menu"><a href="#">Teacher</a>
+					                        <ul class="dl-submenu">
+					                            <li><a href="../our-teacher.php">Our Teacher</a></li>
+			                                    <li><a href="../our-teacher-details.php">our teacher details</a></li>
+					                        </ul>
+					                    </li>
+					                    <li class="menu-item kode-parent-menu"><a href="#">Gallery</a>
+					                        <ul class="dl-submenu">
+					                            <li><a href="../gallery-masonary.php">Masonary 2 Col </a></li>
+			                                		                        </ul>
+					                    </li>
+					                   
+					                    </li>
+					                    <li class="menu-item kode-parent-menu"><a href="#">Contact US</a>
+					                        <ul class="dl-submenu">
+					                            <li><a href="../contactus.php">Contact Us 1</a></li>
+			                                   </ul>
+					                    </li>
+					                </ul>
+			                     <li class="menu-item kode-parent-menu"><a href="#">LOGOUT</a>
+					                        <ul class="dl-submenu">
+					                            <li><a href="../index.php">Masonary 2 Col </a></li>
+			                                		                        </ul>
+					                    </li>
+					                   
+					            </div>
+					            <!--DL Menu END-->
     						</div>
     						<!--kode nav_2 end-->
     					</div>
@@ -133,6 +299,7 @@ else{
     		</div>
     		<!--kode navigation end-->
 		</header>
+					                   
 		<!--HEADER END-->
 
 <!--Content Wrap Start-->
@@ -145,7 +312,7 @@ else{
     				<div class="col-md-8">
                                 <form action="" method="post">
                                     <div class="contact_des">
-                                        <h4>EDIT PROFILE</h4>
+                                        <h4>Edit Profile</h4>
                                          <div class="inputs_des des_2">
                                             <input type="text" placeholder="Name " value="<?php echo $r[1]; ?>" name="prof_name"><i class="fa fa-user"></i>
                                         </div>
@@ -155,18 +322,19 @@ else{
                                         </div>
                                         
                                         <div class="inputs_des des_2">
-                                            <input type="text" placeholder="Achievement " value="<?php echo $r[4]; ?>" name="prof_phone"><i class="fa fa-phone"></i>
+                                            <input type="text" placeholder="Phone num " value="<?php echo $r[4]; ?>" name="prof_phone"><i class="fa fa-phone"></i>
                                         </div>
    										<div class="inputs_des des_2">
                                             <input type="text" placeholder="Achievement type" value="<?php echo $r[5]; ?>" name="prof_colg"><i class="fa fa-book"></i>
                                         </div>
-                                        <div class="inputs_des des_2">
+										<div class="inputs_des des_2">
                                            <textarea name="prof_desc"><?php echo $r[8]; ?></textarea>
                                             <i class="fa fa-envelope-o"></i>
                                         </div>
 										<div class="inputs_des des_2">
-										<input type="file" name="fileToUpload" id="fileToUpload">
-										</div>
+                                         <input type="text" placeholder="Semester" value="<?php echo $r[11];?>" name="prof_sem"><!--<i class="fa fa-book">--></i> 
+                                        </div>
+										
                                         <div class="inputs_des des_2">
                                             <button type="submit" name="addskill">Edit Profile</button>
                                         </div>
@@ -187,7 +355,8 @@ else{
 			<!--EDU2 FOOTER CONTANT WRAP START-->
 				<div class="container">
 					<div class="row">
-						<!--EDU2 FOOTER CONTANT DES START-->
+						<!--EDU2 FOOTER CONTANT DES S
+TART-->
 						<div class="col-md-3">
 							<div class="widget widget-links">
 								<h5>Information</h5>
@@ -335,9 +504,10 @@ if(isset($_POST['addskill']))	{
 	$phone=$_POST['prof_phone'];
 	$clg=$_POST['prof_colg'];
 	$desc=$_POST['prof_desc'];
+	$sem=$_POST['prof_sem'];
 	
 	//echo $name."<br>".$email."<br>".$phone."<br>".$clg."<br>".$desc;
-	$sql=mysql_query("UPDATE st_reg SET name='$name',email='$email',phone='$phone',college='$clg',aboutme='$desc' WHERE id='$id'") or die(mysql_error());
+	$sql=mysql_query("UPDATE st_reg SET name='$name',email='$email',phone='$phone',college='$clg',aboutme='$desc',semester='$sem' WHERE id='$id'") or die(mysql_error());
 	
 	echo "<meta http-equiv='refresh' content='0;url=student-prof.php'>";
 }
