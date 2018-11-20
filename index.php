@@ -1,494 +1,349 @@
-<?php
-include('config4.php');
-?>
-<!DOCTYPE html>
-<html lang="en">
-	
-<!-- Mirrored from kodeforest.net/html/uoe/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Sep 2018 08:39:54 GMT -->
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Education</title>
-	<!-- Bootstrap core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<!-- Full Calender CSS -->
-	<link href="css/fullcalendar.css" rel="stylesheet">
-	<!-- Owl Carousel CSS -->
-	<link href="css/owl.carousel.css" rel="stylesheet">
-	<!-- Pretty Photo CSS -->
-	<link href="css/prettyPhoto.css" rel="stylesheet">
-	<!-- Bx-Slider StyleSheet CSS -->
-	<link href="css/jquery.bxslider.css" rel="stylesheet"> 
-	<!-- Font Awesome StyleSheet CSS -->
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-    <!-- DL Menu CSS -->
-    <link href="js/dl-menu/component.css" rel="stylesheet">
-	<link href="svg/style.css" rel="stylesheet">
-	<!-- Widget CSS -->
-	<link href="css/widget.css" rel="stylesheet">
-	<!-- Typography CSS -->
-	<link href="css/typography.css" rel="stylesheet">
-	<!-- Shortcodes CSS -->
-	<link href="css/shortcodes.css" rel="stylesheet">
-	<!-- Custom Main StyleSheet CSS -->
-	<link href="style.css" rel="stylesheet">
-	<!-- Color CSS -->
-	<link href="css/color.css" rel="stylesheet">
-	<!-- Responsive CSS -->
-	<link href="css/responsive.css" rel="stylesheet">
-	<!-- SELECT MENU -->
-	<link href="css/selectric.css" rel="stylesheet">
-	<!-- SIDE MENU -->
-	<link rel="stylesheet" href="css/jquery.sidr.dark.css">
-</head>
+<!--
+//index.php
+!-->
 
-<body>
-	<!--KF KODE WRAPPER WRAP START-->
-    <div class="kode_wrapper">
-		<div id="sidr">
-		<div class="logo_wrap">
-			<a href="#"><img src="extra-images/logo.png" alt=""></a>
+<?php
+
+include('database_connection.php');
+
+session_start();
+
+$id=$_SESSION['uid'];
+//$id='1';
+?>
+
+<html>  
+    <head>
+    	<script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script>
+		<script>
+		  (adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-4529508631166774",
+			enable_page_level_ads: true
+		  });
+		</script>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Chat Application using PHP Ajax Jquery</title>  
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  		<script src="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
+    </head>  
+    <body>  
+        <div class="container">
+<!--
+			<br />
+			
+			<h3 align="center">Tutorial - <a href="https://www.webslesson.info/2018/07/live-chat-system-in-php-using-ajax-jquery.html">Chat Application using PHP Ajax Jquery</a></h3><br />
+			<br />
+-->
+			<div class="row">
+<!--
+				<div class="col-md-8 col-sm-6">
+					<h4>Online User</h4>
+				</div>
+-->
+				<div class="col-md-2 col-sm-3">
+					<input type="hidden" id="is_active_group_chat_window" value="no" />
+					<button type="button" name="group_chat" id="group_chat" class="btn btn-warning btn-xs">Group Chat</button>
+				</div>
+<!--
+				<div class="col-md-2 col-sm-3">
+					<p align="right">Hi - <?php echo $_SESSION['uid']; ?> - <a href="logout.php">Logout</a></p>
+				</div>
+-->
+			</div>
+<!--
+			<div class="table-responsive">
+				
+				<div id="user_details"></div>
+				<div id="user_model_details"></div>
+			</div>
+-->
+<!--
+			<br />
+			<br />
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				 webslesson_mainblogsec_Blog1_1x1_as 
+				<ins class="adsbygoogle"
+					 style="display:block"
+					 data-ad-client="ca-pub-4529508631166774"
+					 data-ad-host="ca-host-pub-1556223355139109"
+					 data-ad-host-channel="L0007"
+					 data-ad-slot="6573078845"
+					 data-ad-format="auto"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			<br />
+			<br />
+-->
 		</div>
-		<div class="clearfix clear"></div>
-		<!-- Your content -->
-		<div class="kf-sidebar">
-			<!--KF_SIDEBAR_SEARCH_WRAP START-->
-			<div class="widget widget-search">
-				<h2>Search Course</h2>
-				<form>
-					<input type="search" placeholder="Keyword...">
+<!--
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-87739877-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+-->
+    </body>  
+</html>
+
+<style>
+
+.chat_message_area
+{
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
+
+#group_chat_message
+{
+	width: 100%;
+	height: auto;
+	min-height: 80px;
+	overflow: auto;
+	padding:6px 24px 6px 12px;
+}
+
+.image_upload
+{
+	position: absolute;
+	top:3px;
+	right:3px;
+}
+.image_upload > form > input
+{
+    display: none;
+}
+
+.image_upload img
+{
+    width: 24px;
+    cursor: pointer;
+}
+
+</style>  
+
+<div id="group_chat_dialog" title="Group Chat Window">
+	<div id="group_chat_history" style="height:400px; border:1px solid #ccc; overflow-y: scroll; margin-bottom:24px; padding:16px;">
+
+	</div>
+	<div class="form-group">
+		<!--<textarea name="group_chat_message" id="group_chat_message" class="form-control"></textarea>!-->
+		<div class="chat_message_area">
+			<div id="group_chat_message" contenteditable class="form-control">
+
+			</div>
+			<div class="image_upload">
+				<form id="uploadImage" method="post" action="upload.php">
+					<label for="uploadFile"><img src="upload.png" /></label>
+					<input type="file" name="uploadFile" id="uploadFile" accept=".jpg, .png" />
 				</form>
 			</div>
-			<!--KF_SIDEBAR_SEARCH_WRAP END-->
-
-			<!--KF_SIDEBAR_ARCHIVE_WRAP START-->
-			<div class="widget widget-archive ">
-				<h2>Archives</h2>
-				<ul class="sidebar_archive_des">
-					<li>
-						<a href="#"><i class="fa fa-angle-right"></i>January 2016</a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-angle-right"></i>February 2016</a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-angle-right"></i>March 2016</a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-angle-right"></i>April 2016</a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-angle-right"></i>May 2016</a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-angle-right"></i>June 2016</a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-angle-right"></i>August 2016</a>
-					</li>
-				</ul>
-			</div>
-			<!--KF_SIDEBAR_ARCHIVE_WRAP END-->
-
-			<p class="copy-right-sidr">Design and Developed by KodeForest @ All Rights Reserved by KodeForest</p>
 		</div>
 	</div>
-    	<!--HEADER START-->
-    	<header id="header_2">
-    		<!--kode top bar start-->
-    		<div class="top_bar_2">
-	    		<div class="container">
-	    			<div class="row">
-	    				<div class="col-md-5">
-	    				
-	    				</div>
-	    				<div class="col-md-7">
-<!--
-    						<div class="lng_wrap">
-	    						<div class="dropdown">
-									<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-									
-										<span class="caret"></span>
-									</button>
-									<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-										<li><a href="#"><i><img src="images/english.jpg" alt=""></i>English</a></li>
-										<li><a href="#"><i><img src="images/german.jpg" alt=""></i>German</a></li> 
-									</ul>
-								</div>
-	    					</div>
--->
-    						<ul class="login_wrap">
-    							<li><a href="#" data-toggle="modal" data-target="#reg-box"><i class="fa fa-user"></i>Register</a></li>
-    							<li><a href="#" data-toggle="modal" data-target="#signin-box"><i class="fa fa-sign-in"></i>Sign In</a></li>
-    						</ul>	    					
-	    					<ul class="top_nav">
-	    						<li><a href="blog-detail.html">News</a></li>
-	    						<li><a href="event-detail.html">Event</a></li>
-	    						
-	    						<li><a href="contactus.html">contact us</a></li>
-	    					</ul>
-	    				</div>
-	    			</div>
-	    		</div>
-	    	</div>
-    		<!--kode top bar end-->
-        	
-	    	<!--kode navigation start-->
-    		<div class="kode_navigation">
-    			<div id="mobile-header">
-                	<a id="responsive-menu-button" href="#sidr-main"><i class="fa fa-bars"></i></a>
-                </div>
-    			<div class="container">
-    				<div class="row">
-    					<div class="col-md-2">
-    						<div class="logo_wrap">
-    							<a href="#"><img src="extra-images/logo_2.png" alt=""></a>
-    						</div>
-    					</div>
-    					<div class="col-md-10">
-    						<!--kode nav_2 start-->
-    						<div class="nav_2" id="navigation">
-    							<ul>
-    								<li><a href="index-2.html">home</a></li>
-									<!--<li><a href="aboutus.html">About Us</a></li>
-		                            <li><a href="#">Event</a>-->
-		                            	<!--<ul>
-		                                    <li><a href="our-event.html">our Event</a></li>
-		                                    <li><a href="event-list.html">Event List</a></li>
-		                                    <li><a href="event-detail.html">Event Detail</a></li>
-		                                </ul>
-		                            </li>
-		                            <li><a href="#">Blog</a>
-		                            	<ul>
-		                                    <li><a href="our-blog.html">our Blog</a></li>
-		                                    <li><a href="blog-2-column.html">blog 2 column</a></li>
-		                                    <li><a href="blog-3-column.html">blog 3 column</a></li>
-		                                    <li><a href="blog-left-sidebar.html">blog with left sidebar</a></li>
-		                                    <li><a href="blog-right-sidebar.html">blog with right sidebar</a></li>
-		                                    <li><a href="blog-detail.html">blog-detail</a></li>
-		                                </ul>
-		                            </li>
-		                           <li><a href="#">Course</a>
-		                            	<ul>
-		                                	<li><a href="our-courses.html">Our Course</a></li>
-		                                    <li><a href="courses-list.html">Course List</a></li>
-		                                	<li><a href="courses-detail.html">Course Detail</a></li>
-		                                </ul>
-		                            </li>
-		                            <li><a href="#">Teacher</a>
-		                            	<ul>
-		                                	<li><a href="our-teacher.html">Our Teacher</a></li>
-		                                    <li><a href="our-teacher-details.html">our teacher details</a></li>
-		                                </ul>
-		                            </li>
-		                            <li><a href="#">Gallery</a>
-		                            	<ul>
-		                                	<li><a href="gallery-masonary-2col.html">Masonary 2 Col </a></li>
-		                                	<li><a href="gallery-masonary.html">Masonary 3 Col </a></li>
-		                                	<li><a href="gallery-masonary-4col.html">Masonary 4 Col </a></li>
-		                                    <li><a href="filterable-gallery.html">Simple gallery</a></li>
-		                                </ul>
-		                            </li>
-									<li><a href="#">Pages</a>
-		                            	<ul>
-		                                    <li><a href="404.html">404 Page</a></li>
-		                                </ul>
-		                            </li>
-									<li><a href="#">Contact US</a>
-		                            	<ul>
-		                                    <li><a href="contactus.html">Contact Us 1</a></li>
-		                                    <li><a href="contactus-2.html">Contact Us 2</a></li>
-		                                </ul>
-		                            </li>-->
-		                            <li><a id="simple-menu" href="#sidr"><i class="fa fa-bars"></i></a></li>
-    							</ul>
-    							<!--DL Menu Start-->
-					            <div id="kode-responsive-navigation" class="dl-menuwrapper">
-					                <button class="dl-trigger">Open Menu</button>
-					                <ul class="dl-menu">
-										<li><a href="index-2.html">home</a></li>
-										<li><a href="about-us.html">about us</a></li>
-					                    <li class="menu-item kode-parent-menu"><a href="#">Event</a>
-					                        <ul class="dl-submenu">
-					                           <li><a href="our-event.html">our Event</a></li>
-			                                    <li><a href="event-list.html">Event List</a></li>
-			                                    <li><a href="event-detail.html">Event Detail</a></li>
-					                        </ul>
-					                    </li>
-					                    <li class="menu-item kode-parent-menu"><a href="#">Blog</a>
-					                        <ul class="dl-submenu">
-					                            <li><a href="our-blog.html">our Blog</a></li>
-			                                    <li><a href="blog-2-column.html">blog 2 column</a></li>
-			                                    <li><a href="blog-3-column.html">blog 3 column</a></li>
-			                                    <li><a href="blog-left-sidebar.html">blog with left sidebar</a></li>
-			                                    <li><a href="blog-right-sidebar.html">blog with right sidebar</a></li>
-			                                    <li><a href="blog-detail.html">blog-detail</a></li>
-					                        </ul>
-					                    </li>
-					                    <li class="menu-item kode-parent-menu"><a href="#">Course</a>
-					                        <ul class="dl-submenu">
-					                            <li><a href="our-courses.html">Our Course</a></li>
-			                                    <li><a href="courses-list.html">Course List</a></li>
-			                                	<li><a href="courses-detail.html">Course Detail</a></li>
-					                        </ul>
-					                    </li>
-					                    <li class="menu-item kode-parent-menu"><a href="#">Teacher</a>
-					                        <ul class="dl-submenu">
-					                            <li><a href="our-teacher.html">Our Teacher</a></li>
-			                                    <li><a href="our-teacher-details.html">our teacher details</a></li>
-					                        </ul>
-					                    </li>
-					                    <li class="menu-item kode-parent-menu"><a href="#">Gallery</a>
-					                        <ul class="dl-submenu">
-					                            <li><a href="gallery-masonary-2col.html">Masonary 2 Col </a></li>
-			                                	<li><a href="gallery-masonary.html">Masonary 3 Col </a></li>
-			                                	<li><a href="gallery-masonary-4col.html">Masonary 4 Col </a></li>
-			                                    <li><a href="filterable-gallery.html">Simple gallery</a></li>
-					                        </ul>
-					                    </li>
-					                    <li class="menu-item kode-parent-menu"><a href="#">404 Page</a>
-					                        <ul class="dl-submenu">
-					                            <li><a href="404.html">404 Page</a></li>
-					                        </ul>
-					                    </li>
-					                    <li class="menu-item kode-parent-menu"><a href="#">Contact US</a>
-					                        <ul class="dl-submenu">
-					                            <li><a href="contactus.html">Contact Us 1</a></li>
-			                                    <li><a href="contactus-2.html">Contact Us 2</a></li>
-					                        </ul>
-					                    </li>
-					                </ul>
-					            </div>
-					            <!--DL Menu END-->
-    						</div>
-    						<!--kode nav_2 end-->
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    		<!--kode navigation end-->
-		</header>
-		<!--HEADER END-->
-		<!-- SIGNIN MODEL START -->
-    <div class="modal fade" id="signin-box" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <div class="modal-content">
-                <div class="user-box">
-                    <h2>Sign In</h2>
-                    <!--FORM FIELD START-->
-					<form action="" method="post">
-                    <div class="form">
-                        <div class="input-container">
-                            <input type="text" name="mail" placeholder="E-mail">
-                            <i class="fa fa-envelope-o"></i>
-                        </div>
-                        <div class="input-container">
-                            <input type="password" name="pass" placeholder="Password">
-                            <i class="fa fa-unlock"></i>
-                        </div>
-                        <div class="input-container">
-                            <label>
-                                <span class="radio">
-                                    <input type="checkbox" name="foo" value="1" checked>
-                                    <span class="radio-value" aria-hidden="true"></span>
-                                </span>
-                                <span>Remember me</span>
-                            </label>
-                        </div>
-                        <div class="input-container">
-							<button class="btn-style" name="signin" type="submit">Sign In</button>
-                        </div>
-                    </div>
-                    <!--FORM FIELD END-->
-                    <!--OPTION START-->
-                    <div class="option">
-                        <h5>Or Using</h5>
-                    </div>
-                    <!--OPTION END-->
-                    <!--OPTION START-->
-                    <div class="social-login">
-                        <a href="#" class="google"><i class="fa fa-google-plus"></i>Google Account</a>
-                        <a href="#" class="facebook"><i class="fa fa-facebook"></i>Facebook Account</a>
-                    </div>
-                    <!--OPTION END-->
-                
-                </div>
-                <div class="user-box-footer">
-                    <p>Don't have an account?<br><a href="#">Sign up as a User</a></p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-		</form>
-		<?php
-if(isset($_POST['signin'])){
-	$s1=$_POST['mail'];
-    $s2=$_POST['pass'];
-$sql="SELECT * FROM reg WHERE email='$s1' AND password='$s2'";
-$q=mysql_query($sql) or die(mysql_error());
-$rc=mysql_num_rows($q);
-if($rc==0){
-	
-	echo '<script>alert("invalid credentials");window.href="index.php";';
-	
-}else{
-	
-	$_SESSION['uname']=$s1;
-	
-	echo '<script type="text/javascript">
-           window.location = "sub1.php"
-      </script>';
-	//exit(header('Location:sub1.php'));
-}
-}
-
-?>
-    <!-- SIGNIN MODEL END -->
+	<div class="form-group" align="right">
+		<button type="button" name="send_group_chat" id="send_group_chat" class="btn btn-info">Send</button>
 	</div>
+</div>
+
+
+<script>  
+$(document).ready(function(){
+
+	fetch_user();
+
+	setInterval(function(){
+		update_last_activity();
+		fetch_user();
+		update_chat_history_data();
+		fetch_group_chat_history();
+	}, 5000);
+
+	function fetch_user()
+	{
+		$.ajax({
+			url:"fetch_user.php",
+			method:"POST",
+			success:function(data){
+				$('#user_details').html(data);
+			}
+		})
+	}
+
+	function update_last_activity()
+	{
+		$.ajax({
+			url:"update_last_activity.php",
+			success:function()
+			{
+
+			}
+		})
+	}
+
+	function make_chat_dialog_box(to_user_id, to_user_name)
+	{
+		var modal_content = '<div id="user_dialog_'+to_user_id+'" class="user_dialog" title="You have chat with '+to_user_name+'">';
+		modal_content += '<div style="height:400px; border:1px solid #ccc; overflow-y: scroll; margin-bottom:24px; padding:16px;" class="chat_history" data-touserid="'+to_user_id+'" id="chat_history_'+to_user_id+'">';
+		modal_content += fetch_user_chat_history(to_user_id);
+		modal_content += '</div>';
+		modal_content += '<div class="form-group">';
+		modal_content += '<textarea name="chat_message_'+to_user_id+'" id="chat_message_'+to_user_id+'" class="form-control chat_message"></textarea>';
+		modal_content += '</div><div class="form-group" align="right">';
+		modal_content+= '<button type="button" name="send_chat" id="'+to_user_id+'" class="btn btn-info send_chat">Send</button></div></div>';
+		$('#user_model_details').html(modal_content);
+	}
+
+	$(document).on('click', '.start_chat', function(){
+		var to_user_id = $(this).data('touserid');
+		var to_user_name = $(this).data('tousername');
+		make_chat_dialog_box(to_user_id, to_user_name);
+		$("#user_dialog_"+to_user_id).dialog({
+			autoOpen:false,
+			width:400
+		});
+		$('#user_dialog_'+to_user_id).dialog('open');
+		$('#chat_message_'+to_user_id).emojioneArea({
+			pickerPosition:"top",
+			toneStyle: "bullet"
+		});
+	});
+
+	$(document).on('click', '.send_chat', function(){
+		var to_user_id = $(this).attr('id');
+		var chat_message = $('#chat_message_'+to_user_id).val();
+		$.ajax({
+			url:"insert_chat.php",
+			method:"POST",
+			data:{to_user_id:to_user_id, chat_message:chat_message},
+			success:function(data)
+			{
+				//$('#chat_message_'+to_user_id).val('');
+				var element = $('#chat_message_'+to_user_id).emojioneArea();
+				element[0].emojioneArea.setText('');
+				$('#chat_history_'+to_user_id).html(data);
+			}
+		})
+	});
+
+	function fetch_user_chat_history(to_user_id)
+	{
+		$.ajax({
+			url:"fetch_user_chat_history.php",
+			method:"POST",
+			data:{to_user_id:to_user_id},
+			success:function(data){
+				$('#chat_history_'+to_user_id).html(data);
+			}
+		})
+	}
+
+	function update_chat_history_data()
+	{
+		$('.chat_history').each(function(){
+			var to_user_id = $(this).data('touserid');
+			fetch_user_chat_history(to_user_id);
+		});
+	}
+
+	$(document).on('click', '.ui-button-icon', function(){
+		$('.user_dialog').dialog('destroy').remove();
+		$('#is_active_group_chat_window').val('no');
+	});
+
+	$(document).on('focus', '.chat_message', function(){
+		var is_type = 'yes';
+		$.ajax({
+			url:"update_is_type_status.php",
+			method:"POST",
+			data:{is_type:is_type},
+			success:function()
+			{
+
+			}
+		})
+	});
+
+	$(document).on('blur', '.chat_message', function(){
+		var is_type = 'no';
+		$.ajax({
+			url:"update_is_type_status.php",
+			method:"POST",
+			data:{is_type:is_type},
+			success:function()
+			{
+				
+			}
+		})
+	});
+
+	$('#group_chat_dialog').dialog({
+		autoOpen:false,
+		width:400
+	});
+
+	$('#group_chat').click(function(){
+		$('#group_chat_dialog').dialog('open');
+		$('#is_active_group_chat_window').val('yes');
+		fetch_group_chat_history();
+	});
+
+	$('#send_group_chat').click(function(){
+		var chat_message = $('#group_chat_message').html();
+		var action = 'insert_data';
+		if(chat_message != '')
+		{
+			$.ajax({
+				url:"group_chat.php",
+				method:"POST",
+				data:{chat_message:chat_message, action:action},
+				success:function(data){
+					$('#group_chat_message').html('');
+					$('#group_chat_history').html(data);
+				}
+			})
+		}
+	});
+
+	function fetch_group_chat_history()
+	{
+		var group_chat_dialog_active = $('#is_active_group_chat_window').val();
+		var action = "fetch_data";
+		if(group_chat_dialog_active == 'yes')
+		{
+			$.ajax({
+				url:"group_chat.php",
+				method:"POST",
+				data:{action:action},
+				success:function(data)
+				{
+					$('#group_chat_history').html(data);
+				}
+			})
+		}
+	}
+
+	$('#uploadFile').on('change', function(){
+		$('#uploadImage').ajaxSubmit({
+			target: "#group_chat_message",
+			resetForm: true
+		});
+	});
 	
-	
-		<!--NEWS LETTERS END-->
-		<!--FOOTER START-->
-		<footer>
-			<!--EDU2 FOOTER CONTANT WRAP START-->
-				<div class="container">
-					<div class="row">
-						<!--EDU2 FOOTER CONTANT DES START-->
-						<div class="col-md-3">
-							<div class="widget widget-links">
-								<h5>Information</h5>
-								<ul>
-									<li><a href="#">About us</a></li>
-									<li><a href="#">Our Stories</a></li>
-									<li><a href="#">My Account</a></li>
-									<li><a href="#">Our History</a></li>
-									<li><a href="#">Sprcialist Info</a></li>
-								</ul>
-							</div>
-						</div>
-						<!--EDU2 FOOTER CONTANT DES END-->
-
-						<!--EDU2 FOOTER CONTANT DES START-->
-						<div class="col-md-3">
-							<div class="widget widget-links">
-								<h5>Student Help</h5>
-								<ul>
-									<li><a href="#">My Info</a></li>
-									<li><a href="#">My Questions</a></li>
-									<li><a href="#">F.A.Q</a></li>
-									<li><a href="#">Serch Courses</a></li>
-									<li><a href="#">Latest Informations</a></li>
-								</ul>
-							</div>
-						</div>
-						<!--EDU2 FOOTER CONTANT DES END-->
-
-						<!--EDU2 FOOTER CONTANT DES START-->
-						<div class="col-md-3">
-							<div class="widget wiget-instagram">
-								<h5>Instagram</h5>
-								<ul>
-									<li><a href="#"><img src="extra-images/instagram-1.jpg" alt=""/></a></li>
-									<li><a href="#"><img src="extra-images/instagram-2.jpg" alt=""/></a></li>
-									<li><a href="#"><img src="extra-images/instagram-3.jpg" alt=""/></a></li>
-									<li><a href="#"><img src="extra-images/instagram-4.jpg" alt=""/></a></li>
-									<li><a href="#"><img src="extra-images/instagram-5.jpg" alt=""/></a></li>
-									<li><a href="#"><img src="extra-images/instagram-6.jpg" alt=""/></a></li>
-								</ul>
-							</div>
-						</div>
-						<!--EDU2 FOOTER CONTANT DES END-->
-
-						<!--EDU2 FOOTER CONTANT DES START-->
-						<div class="col-md-3">
-							<div class="widget widget-contact">
-								<h5>Contact</h5>
-								<ul>
-									<li>PO Box UN152468, 1 Street North, New Towm, California, USA</li>
-									<li>Phone : <a href="#"> 5 (012) 4565 789</a></li>
-									<li>Fax : <a href="#"> 5 (012) 4565 789</a></li>
-									<li>Email : <a href="#"> Info@info.com</a></li>
-								</ul>
-							</div>
-						</div>
-						<!--EDU2 FOOTER CONTANT DES END-->
-					</div>
-				</div>
-		</footer>
-		<!--FOOTER END-->
-		<!--COPYRIGHTS START-->
-		<div class="edu2_copyright_wrap">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3">
-						<div class="edu2_ft_logo_wrap">
-							<a href="#"><img src="extra-images/ft_logo.png" alt=""/></a>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="copyright_des">
-							<span>&copy; All Rights reserved. Powered By <a href="#">KODEFOREST</a></span>
-						</div>
-					</div>
-
-					<div class="col-md-3">
-						<ul class="cards_wrap">
-							<li><a href="#"><img src="extra-images/visacard.png" alt=""/></a></li>
-							<li><a href="#"><img src="extra-images/mastercard.png" alt=""/></a></li>
-							<li><a href="#"><img src="extra-images/americancard.png" alt=""/></a></li>
-							<li><a href="#"><img src="extra-images/card.png" alt=""/></a></li>
-							<li><a href="#"><img src="extra-images/descoverycard.png" alt=""/></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--COPYRIGHTS START-->
-    </div>
-    <!--KF KODE WRAPPER WRAP END-->
-	<!--Bootstrap core JavaScript-->
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<!--Bx-Slider JavaScript-->
-	<script src="js/jquery.bxslider.min.js"></script>
-	<!--Owl Carousel JavaScript-->
-	<script src="js/owl.carousel.min.js"></script>
-	<!--Pretty Photo JavaScript-->
-	<script src="js/jquery.prettyPhoto.js"></script>
-	<!--Dl Menu Script-->
-	<script src="js/dl-menu/modernizr.custom.js"></script>
-	<!--Dl Menu Script-->
-	<script src="js/dl-menu/jquery.dlmenu.js"></script>
-	<!--Dl Menu Script-->
-	<script src="js/dl-menu/modernizr.custom.js"></script>
-	<!--Dl Menu Script-->
-	<script src="js/dl-menu/jquery.dlmenu.js"></script>
-	<!--Full Calender JavaScript-->
-	<script src="js/moment.min.js"></script>
-	<script src="js/fullcalendar.min.js"></script>
-	<script src="js/jquery.downCount.js"></script>
-	<!--Image Filterable JavaScript-->
-	<script src="js/jquery-filterable.js"></script>
-	<!--Accordian JavaScript-->
-	<script src="js/jquery.accordion.js"></script>
-	<!--Number Count (Waypoints) JavaScript-->
-	<script src="js/waypoints-min.js"></script>
-	<!--v ticker-->
-	<script src="js/jquery.vticker.min.js"></script>
-	<!--select menu-->
-	<script src="js/jquery.selectric.min.js"></script>
-	<!--Side Menu-->
-	<script src="js/jquery.sidr.min.js"></script>
-	<!--Custom JavaScript-->
-	<script src="js/custom.js"></script>
-
-    
-</body>
-
-<!-- Mirrored from kodeforest.net/html/uoe/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Sep 2018 08:43:17 GMT -->
-</html>
+});  
+</script>
